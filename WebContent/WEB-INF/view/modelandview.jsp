@@ -47,5 +47,13 @@ NOTE: nothing will be displayed here.
 
 Request using JSTL: <c:out value="${testModelKey}" />
 
+<p/>
+
+<c:forEach var="row" items="${offers}">
+ID: ${row.id} <br/>
+Name: ${row.name} <br/>
+Email: ${row.email} <br/>
+</c:forEach>
+
 </body>
 </html>

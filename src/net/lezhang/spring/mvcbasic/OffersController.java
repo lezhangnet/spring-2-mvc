@@ -1,16 +1,24 @@
 package net.lezhang.spring.mvcbasic;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.lezhang.spring.mvcdao.Offer;
+import net.lezhang.spring.mvcservice.OfferService;
+
 @Controller
 public class OffersController {
+
+    @Autowired
+    private OfferService offerService;
 
     @RequestMapping("/")
     public String home() {
@@ -35,6 +43,10 @@ public class OffersController {
     @RequestMapping("/model")
     public String model(Model model) {
         model.addAttribute("testModelKey", "<b>newTestModelValue</b>");
+
+        List<Offer> offers = offerService.getCurrentOffers();
+        model.addAttribute("offers", offers);
+
         return "modelandview";
     }
 

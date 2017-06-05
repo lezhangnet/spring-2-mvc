@@ -30,4 +30,14 @@
       <res-type>javax.sql.DataSource</res-type>
       <res-auth>Container</res-auth>
   </resource-ref>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:net/lezhang/spring/mvcconfig/myDaoBeans.xml</param-value>
+  </context-param>
+
 </web-app>
+

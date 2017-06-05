@@ -8,4 +8,7 @@ Note: Must have:
 
 To run: project - run as: Run on Server
 
-To test: http://localhost:8080/offersModule/
+To test: http://localhost:8080/offerscontext/ - using sql query in jsp
+http://localhost:8080/offerscontext/offers - using JNDI data source in controller to query database
+
+Note: The context path (offerscontext) is set in Tomcat server - server.xml, which is not captured in this git repo.

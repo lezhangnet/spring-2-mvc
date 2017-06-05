@@ -53,6 +53,8 @@ Request using JSTL: <c:out value="${testModelKey}" />
 ID: ${row.id} <br/>
 Name: ${row.name} <br/>
 Email: ${row.email} <br/>
+	<c:out value="${row}"></c:out>
+	<p/>
 </c:forEach>
 
 </body>

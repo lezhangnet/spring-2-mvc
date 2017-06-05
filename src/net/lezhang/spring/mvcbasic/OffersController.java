@@ -39,15 +39,21 @@ public class OffersController {
         return mv;
     }
 
-    // more elegant than ModelAndView above
-    @RequestMapping("/model")
-    public String model(Model model) {
+    // using Model as argument is more elegant than ModelAndView above
+    @RequestMapping("/offers")
+    public String showOffers(Model model) {
         model.addAttribute("testModelKey", "<b>newTestModelValue</b>");
 
         List<Offer> offers = offerService.getCurrentOffers();
         model.addAttribute("offers", offers);
 
         return "modelandview";
+    }
+
+    @RequestMapping("/createoffer")
+    public String createOffer() {
+
+        return "createoffer";
     }
 
 }

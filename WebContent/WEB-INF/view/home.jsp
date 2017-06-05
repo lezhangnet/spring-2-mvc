@@ -13,6 +13,13 @@
 My JSP Home
 <p/>
 
+
+<a href="${pageContext.request.contextPath}/offers">Show current offers</a>
+<p/>
+<a href="${pageContext.request.contextPath}/createoffer">Add a new offer</a>
+<p/>
+
+
 <sql:query var="rs" dataSource="jdbc/TestDB">
 select id, name, email, text from offers
 </sql:query>

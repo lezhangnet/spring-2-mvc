@@ -27,7 +27,7 @@ public class OfferDAO {
         System.out.println("OfferDAO constructed");
     }
 
-    //@Autowired
+    @Autowired
     public void setDataSource(DataSource dataSource) {
         System.out.println("Autowired dataSource: " + ((dataSource == null) ? "null" : "ok"));
         this.jdbcTemplate = new JdbcTemplate(dataSource);

@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.lezhang.spring.mvcdao.Offer;
@@ -40,8 +42,20 @@ public class OffersController {
     }
 
     // using Model as argument is more elegant than ModelAndView above
-    @RequestMapping("/offers")
+    @RequestMapping(value="/offers", method=RequestMethod.GET)
     public String showOffers(Model model) {
+        model.addAttribute("testModelKey", "<b>newTestModelValue</b>");
+
+        List<Offer> offers = offerService.getCurrentOffers();
+        model.addAttribute("offers", offers);
+
+        return "modelandview";
+    }
+
+    @RequestMapping(value="/offer", method=RequestMethod.GET)
+    public String showOffer(Model model, @RequestParam("id") String id) {
+        System.out.println("RequestParam: " + id);
+
         model.addAttribute("testModelKey", "<b>newTestModelValue</b>");
 
         List<Offer> offers = offerService.getCurrentOffers();

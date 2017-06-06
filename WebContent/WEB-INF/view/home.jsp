@@ -14,7 +14,9 @@ My JSP Home
 <p/>
 
 
-<a href="${pageContext.request.contextPath}/offers">Show current offers</a>
+<a href="${pageContext.request.contextPath}/offers">Show all current offers</a>
+<p/>
+<a href="${pageContext.request.contextPath}/offer?id=13">Show offers #13</a>
 <p/>
 <a href="${pageContext.request.contextPath}/createoffer">Add a new offer</a>
 <p/>

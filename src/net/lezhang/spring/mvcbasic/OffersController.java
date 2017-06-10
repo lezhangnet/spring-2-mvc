@@ -70,8 +70,9 @@ public class OffersController {
         return "createoffer";
     }
 
-    @RequestMapping("/docreateoffer")
-    public String doCreateOffer() {
+    @RequestMapping(value="/docreateoffer", method=RequestMethod.POST)
+    public String doCreateOffer(Model model, Offer offer) {
+        System.out.println(offer);
 
         return "docreateoffer";
     }

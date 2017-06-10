@@ -12,7 +12,7 @@ My JSP Create Offer
 <p/>
 
 
-    <form action="${pageContext.request.contextPath}/docreateoffer" method="get">
+    <form action="${pageContext.request.contextPath}/docreateoffer" method="post">
       Name:&nbsp;
       <input type="text" name="name" size="10" />
       <br><br>
@@ -24,6 +24,8 @@ My JSP Create Offer
       Offer:&nbsp;
       <input type="text" name="offer" size="100" />
       <br><br>
+
+Make sure the names of the text inputs matches the property name of the POJO!
 
       <input type="submit" value="Create Offer">
     </form><br>

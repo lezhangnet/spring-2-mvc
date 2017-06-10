@@ -70,4 +70,10 @@ public class OffersController {
         return "createoffer";
     }
 
+    @RequestMapping("/docreateoffer")
+    public String doCreateOffer() {
+
+        return "docreateoffer";
+    }
+
 }

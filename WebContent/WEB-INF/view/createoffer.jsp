@@ -11,5 +11,23 @@ My JSP Create Offer
 
 <p/>
 
+
+    <form action="${pageContext.request.contextPath}/docreateoffer" method="get">
+      Name:&nbsp;
+      <input type="text" name="name" size="10" />
+      <br><br>
+
+      Email:&nbsp;
+      <input type="text" name="email" size="10" />
+      <br><br>
+
+      Offer:&nbsp;
+      <input type="text" name="offer" size="100" />
+      <br><br>
+
+      <input type="submit" value="Create Offer">
+    </form><br>
+
+
 </body>
 </html>
